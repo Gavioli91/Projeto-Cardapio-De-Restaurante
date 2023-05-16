@@ -9,6 +9,7 @@ class MenuData:
         self.df = pd.read_csv(source_path)
 
         recipes = {}
+
         for items in self.df.itertuples(index=False):
             dish, price, ingr, amount = items
             if dish not in recipes:
