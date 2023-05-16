@@ -16,7 +16,7 @@ class MenuBuilder:
         try:
             curr_dish = [
                 dish
-                for dish in self.menu_data.dishes
+                for dish in self.menu_data.recipes
                 if dish.name == dish_name
             ][0]
         except IndexError:
