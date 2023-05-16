@@ -5,16 +5,15 @@ import pandas as pd
 
 class MenuData:
     def __init__(self, source_path):
-        self.recipes = set()
+        self.dishes = set()
         self.df = pd.read_csv(source_path)
 
         recipes = {}
-
         for items in self.df.itertuples(index=False):
             dish, price, ingr, amount = items
             if dish not in recipes:
-                menu = Dish(dish, price)
-                recipes[dish] = menu
-                self.recipes.add(menu)
+                item_info = Dish(dish, price)
+                recipes[dish] = item_info
+                self.dishes.add(item_info)
             item_info = Ingredient(ingr)
             recipes[dish].add_ingredient_dependency(item_info, amount)
