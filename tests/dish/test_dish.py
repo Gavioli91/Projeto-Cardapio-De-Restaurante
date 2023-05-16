@@ -3,7 +3,6 @@ from src.models.ingredient import Ingredient, Restriction
 import pytest
 
 
-# Req 2
 def test_dish():
     item = Ingredient("ovo")
     instance_pancake = Dish('panqueca', 20.00)
